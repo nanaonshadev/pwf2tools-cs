@@ -23,6 +23,7 @@ namespace pwf2tools
                 this.saveBtn.ForeColor = Color.White;
                 this.themetxt.ForeColor = Color.White;
                 this.EnableRPCBox.ForeColor = Color.White;
+                this.enableToolexit.ForeColor = Color.White;
             }
             else
             {
@@ -39,6 +40,16 @@ namespace pwf2tools
                     EnableRPCBox.Checked = false;
                     break;
             }
+            switch (Properties.Settings.Default.enableExit)
+            {
+                case true:
+                    enableToolexit.Checked = true;
+                    break;
+                default:
+                    enableToolexit.Checked = false;
+                    break;
+            }
+
             themeSetting.DropDownStyle = ComboBoxStyle.DropDownList;
             themeSetting.Text = Properties.Settings.Default.Theme;
         }
@@ -52,6 +63,15 @@ namespace pwf2tools
                     break;
                 default:
                     Properties.Settings.Default.EnableRPC = false;
+                    break;
+            }
+            switch (enableToolexit.Checked)
+            {
+                case true:
+                    Properties.Settings.Default.enableExit = true;
+                    break;
+                default:
+                    Properties.Settings.Default.enableExit = false;
                     break;
             }
             Properties.Settings.Default.Theme = themeSetting.Text;

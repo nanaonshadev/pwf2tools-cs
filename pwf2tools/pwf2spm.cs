@@ -103,7 +103,14 @@ namespace pwf2tools
                     }
 
                     pwf2spmprocess.WaitForExit();
-                    Close();
+                    switch (Properties.Settings.Default.enableExit)
+                    {
+                        case true:
+                            Close();
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 catch (Exception ee)
                 {

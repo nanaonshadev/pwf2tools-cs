@@ -89,7 +89,7 @@
             this.buildtxt.Name = "buildtxt";
             this.buildtxt.Size = new System.Drawing.Size(231, 13);
             this.buildtxt.TabIndex = 5;
-            this.buildtxt.Text = "This build was created on December 5th, 2020.";
+            this.buildtxt.Text = "This build was created on December 8th, 2020.";
             // 
             // abt
             // 

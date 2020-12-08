@@ -30,7 +30,6 @@ namespace pwf2tools
             {
                 Title = "Find your INT file.",
 
-                CheckFileExists = true,
                 CheckPathExists = true,
 
                 DefaultExt = "int",
@@ -91,7 +90,14 @@ namespace pwf2tools
                     }
 
                     pwf2intprocess.WaitForExit();
-                    Close();
+                    switch (Properties.Settings.Default.enableExit)
+                    {
+                        case true:
+                            Close();
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 catch (Exception ee)
                 {
@@ -138,7 +144,7 @@ namespace pwf2tools
                         StartInfo = new ProcessStartInfo
                         {
                             FileName = ".\\bin\\pwf2int",
-                            Arguments = string.Format("extract \"{0}\" \"{1}\"", saveINTbox.Text, intsrcbox.Text),
+                            Arguments = string.Format("create \"{0}\" \"{1}\"", saveINTbox.Text, intsrcbox.Text),
                             UseShellExecute = false,
                             RedirectStandardOutput = true,
                         }
@@ -153,7 +159,14 @@ namespace pwf2tools
                     }
 
                     pwf2intprocess.WaitForExit();
-                    Close();
+                    switch (Properties.Settings.Default.enableExit)
+                    {
+                        case true:
+                            Close();
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 catch (Exception ee)
                 {

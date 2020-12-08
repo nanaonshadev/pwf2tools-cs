@@ -33,6 +33,7 @@
             this.themetxt = new System.Windows.Forms.Label();
             this.EnableRPCBox = new System.Windows.Forms.CheckBox();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.enableToolexit = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // themeSetting
@@ -59,7 +60,7 @@
             // EnableRPCBox
             // 
             this.EnableRPCBox.AutoSize = true;
-            this.EnableRPCBox.Location = new System.Drawing.Point(222, 31);
+            this.EnableRPCBox.Location = new System.Drawing.Point(222, 13);
             this.EnableRPCBox.Name = "EnableRPCBox";
             this.EnableRPCBox.Size = new System.Drawing.Size(120, 17);
             this.EnableRPCBox.TabIndex = 2;
@@ -77,11 +78,22 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // enableToolexit
+            // 
+            this.enableToolexit.AutoSize = true;
+            this.enableToolexit.Location = new System.Drawing.Point(222, 32);
+            this.enableToolexit.Name = "enableToolexit";
+            this.enableToolexit.Size = new System.Drawing.Size(133, 17);
+            this.enableToolexit.TabIndex = 4;
+            this.enableToolexit.Text = "Enable exit on tool use";
+            this.enableToolexit.UseVisualStyleBackColor = true;
+            // 
             // pwf2settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 98);
+            this.Controls.Add(this.enableToolexit);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.EnableRPCBox);
             this.Controls.Add(this.themetxt);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Label themetxt;
         private System.Windows.Forms.CheckBox EnableRPCBox;
         private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.CheckBox enableToolexit;
     }
 }
